@@ -8,7 +8,7 @@ node {
 		echo '-------------start version information ---------'
 		bat "mvn package"
 	}
-	stage('Sonar analysi'){
+	stage('Sonar analysis'){
 	def sonarreport=tool name: 'SonarQuebe', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 	def mvnHome= tool name: 'M3', type: 'maven'
 	withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name

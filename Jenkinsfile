@@ -18,6 +18,6 @@ node {
 		
 	}
 	stage ('running app'){
-	bat "mvn spring-boot:run"
+	bat "mvn install"
 	}
 }

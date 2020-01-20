@@ -5,7 +5,7 @@ node {
 	}
 	stage('compile and packaging'){
 		def mvnHome= tool name: 'M3', type: 'maven'
-		echo '-------------version information ---------'
+		echo '-------------start version information ---------'
 		bat 'mvn –version'
 		echo '-------------version information ---------'
 		bat "mvn package"

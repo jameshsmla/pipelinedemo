@@ -3,7 +3,7 @@ node {
 		git ''
 	}
 	stage('compile and packaging'){
-		def mvnHome= tool name: 'maven-3', type: 'maven'
+		def mvnHome= tool name: 'M3', type: 'maven'
 		sh "${mvnHome}/bin/mvn package"
 	}
 }

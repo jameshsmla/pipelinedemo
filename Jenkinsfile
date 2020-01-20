@@ -9,11 +9,11 @@ node {
 		bat "mvn package"
 	}
 	stage('Sonar analysis'){
-	def sonarreport=tool name: 'SonarQuebe', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-	def mvnHome= tool name: 'M3', type: 'maven'
-	withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
-      bat "${mvnHome}/bin/mvn sonar:sonar"
-	
-	}
+		def sonarreport=tool name: 'SonarQuebe', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+		def mvnHome= tool name: 'M3', type: 'maven'
+		withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
+	      bat "${mvnHome}\\bin\\mvn sonar:sonar"
+		
+		}
 	}
 }

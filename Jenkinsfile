@@ -6,14 +6,18 @@ node {
 		def jdkpath=tool name: 'JAVA_HOME', type: 'jdk'
 		def mvnHome= tool name: 'M3', type: 'maven'
 		echo '-------------start version information ---------'
-		bat "mvn package"
+		bat "mvn install"
 	}
 	stage('Sonar analysis'){
 		def sonarreport=tool name: 'SonarQuebe', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 		def mvnHome= tool name: 'M3', type: 'maven'
-		withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
+		withSonarQubeEnv('sonar') { 
 	      bat "mvn sonar:sonar"
 		
 		}
+		
+	}
+	stage ('running app'){
+	bat "mvn spring-boot:run"
 	}
 }

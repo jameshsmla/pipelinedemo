@@ -10,7 +10,7 @@ pipeline {
       }
       stage('build') {
             
-            def mvnHome = tool name: 'M3', type: 'maven'
+            	mvnHome = tool name: 'M3', type: 'maven'
               echo 'Building stage'
               sh "${mvnHome}/bin/mvn package"
            

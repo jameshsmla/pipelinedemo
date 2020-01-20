@@ -1,19 +1,9 @@
-pipeline {
-   agent any
-
-      stages {
-          stage('Check out SCM') {
-             steps {
-                echo 'hello world'
-                git('https://github.com/jameshsmla/pipelinedemo.git')
-         }
-      }
-      stage('build') {
-            
-            	mvnHome = tool name: 'M3', type: 'maven'
-              echo 'Building stage'
-              sh "${mvnHome}/bin/mvn package"
-           
-        }
-   }
+node {
+	stage('scm checkout'){
+		git ''
+	}
+	stage('compile and packaging'){
+		def mvnHome= tool name: 'maven-3', type: 'maven'
+		sh "${mvnHome}/bin/mvn package"
+	}
 }

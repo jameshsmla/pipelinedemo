@@ -9,11 +9,11 @@ pipeline {
          }
       }
       stage('build') {
-            steps {
-            def mvnHome=tool name: 'M3', type: 'maven'
+            
+            def mvnHome = tool name: 'M3', type: 'maven'
               echo 'Building stage'
               sh "${mvnHome}/bin/mvn package"
-            }
+           
         }
    }
 }

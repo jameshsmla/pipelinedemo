@@ -1,6 +1,5 @@
 node {
 	stage('scm checkout'){
-		tool name: 'JAVA_HOME', type: 'jdk'
 		git 'https://github.com/jameshsmla/pipelinedemo.git'
 	}
 	stage('compile and packaging'){

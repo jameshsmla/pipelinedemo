@@ -1,6 +1,6 @@
 node {
 	stage('scm checkout'){
-		def jdk=tool name: 'jdk 8', type: 'jdk'
+		tool name: 'JAVA_HOME', type: 'jdk'
 		git 'https://github.com/jameshsmla/pipelinedemo.git'
 	}
 	stage('compile and packaging'){

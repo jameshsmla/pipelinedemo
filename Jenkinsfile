@@ -10,7 +10,7 @@ node {
 	}
 	stage('Sonar analysi'){
 	def sonarreport=tool name: 'SonarQuebe', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-	withSonarQubeEnv('localhost') { // If you have configured more than one global server connection, you can specify its name
+	withSonarQubeEnv('127.0.0.1') { // If you have configured more than one global server connection, you can specify its name
       bat "${sonarreport}/bin/sonar-scanner"
 	
 	}

@@ -8,4 +8,11 @@ node {
 		echo '-------------start version information ---------'
 		bat "mvn package"
 	}
+	stage('Sonar analysi'){
+	def sonarreport=tool name: 'SonarQuebe', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+	withSonarQubeEnv('localhost') { // If you have configured more than one global server connection, you can specify its name
+      bat "${sonarreport}/bin/sonar-scanner"
+	
+	}
+	}
 }
